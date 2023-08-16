@@ -7,9 +7,10 @@ type Props = {
     todo: Todo;
     todos: Todo[];
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+    id: number;
 
 }
-const SingleTodo = ({todo, todos, setTodos}:Props)=>{
+const SingleTodo = ({todo, todos, setTodos, id}:Props)=>{
     const [edit, setEdit] = useState<boolean>(false)
     const [editTodo, setEditTodo] = useState<string>(todo.todo);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -57,10 +58,10 @@ const SingleTodo = ({todo, todos, setTodos}:Props)=>{
                 }>
                 <AiFillEdit />
             </span>
-            <span className="icon" onClick={()=>handleDelete(todo.id)}>
+            <span className="icon" data-testid={`delete${id}`} id={`delete${id}`} onClick={()=>handleDelete(todo.id)}>
                 <AiFillDelete />
             </span>
-            <span className="icon" onClick={()=>handleDone(todo.id)}>
+            <span className="icon" data-testid={`done${id}`} id={`done${id}`} onClick={()=>handleDone(todo.id)}>
                 <MdDone />
             </span>
         </div>

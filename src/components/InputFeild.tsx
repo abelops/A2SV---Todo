@@ -13,8 +13,8 @@
             handleAdd(e);
             inputRef.current?.blur()
             }}>
-            <input type="input" ref={inputRef} value={todo} onChange={(e)=>setTodo(e.target.value)} placeholder="Enter a task" className="inputBox" />
-            <button className="inputSubmit" type="submit"> GO</button>
+            <input type="input" id="input-box" ref={inputRef} value={todo} onChange={(e)=>setTodo(e.target.value)} placeholder="Enter a task" className="inputBox" />
+            <button className="inputSubmit"id="go-button" type="submit"> GO</button>
         </form>
     )
  }
