@@ -58,12 +58,16 @@ const SingleTodo = ({todo, todos, setTodos, id}:Props)=>{
                 }>
                 <AiFillEdit />
             </span>
-            <span className="icon" data-testid={`delete${id}`} id={`delete${id}`} onClick={()=>handleDelete(todo.id)}>
-                <AiFillDelete />
-            </span>
-            <span className="icon" data-testid={`done${id}`} id={`done${id}`} onClick={()=>handleDone(todo.id)}>
-                <MdDone />
-            </span>
+            <label htmlFor={`delete`}>
+                <span className="icon" data-testid={`delete${id}`} id={`delete${id}`} onClick={()=>handleDelete(todo.id)}>
+                    <AiFillDelete />
+                </span>
+            </label>
+            <label htmlFor={`done`}>done</label>
+                <span className="icon" data-testid={`done`} id={`done${id}`} onClick={()=>handleDone(todo.id)}>
+                    <MdDone />
+                </span>
+            
         </div>
     </form>
 }

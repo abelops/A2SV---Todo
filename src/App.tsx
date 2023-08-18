@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import InputFeild from './components/InputFeild';
 import { Todo } from './model';
 import TodoList from './components/TodoList';
